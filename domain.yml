@@ -1,0 +1,43 @@
+version: "2.0"
+
+intents:
+  - greet
+  - train_to_somewhere
+  - train_to_deggendorf
+  - ask_staff_available
+  - ask_way_home
+  - ask_arrival_time
+  - ask_price_range_deggendorf
+
+entities:
+    - stadtname
+    - wohnort
+
+responses:
+    utter_greet:
+       - text: |
+           Hello! How can I help you?
+       - text: |
+           Hi!
+    utter_ask_email:
+       - text: |
+           What is your email address?
+    utter_deggendorf_train:
+       - text: |
+           Der nächste Zug fährt in 10 minuten an Gleis 5
+    utter_staff_availability:
+        - text: |
+            An diesem Bahnhof gibt es leider kein Personal. Tickets müssen am Schalter erworben werden.
+    utter_way_home:
+        - text: |
+            Die nächste gelegenheit um zurück nach {wohnort} zu fahren ist in 15 min.
+    utter_expected_arrival:
+        - text: |
+            Du bist um etwa {ankunftszeit} am Ziel.
+    utter_price_range_to_deggendorf:
+        - text: |
+            Die Kosten für eine Fahr variieren zwischen 15 und 17 Euro.
+            
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

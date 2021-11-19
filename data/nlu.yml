@@ -1,0 +1,72 @@
+version: "2.0"
+
+nlu:
+
+
+- intent: greet
+  examples: |
+    - Hi
+    - Hey!
+    - Hallo
+    - Good day
+    - Good morning
+
+- intent: train_to_deggendorf
+  examples: |
+      - Wie komme ich nach Deggendorf
+      - Welcher Zug fährt nach Deggendorf
+      - Welchen Zug nimmt man nach Deggendorf
+      - Schick mich nach Deggendorf
+      - Welchen Zug kann ich nach Deggendorf nehmen
+      
+- intent: train_to_somewhere
+  examples: |
+        - Bring mich nach [München] (stadtname)
+        - Wie komme ich nach [Passau] (stadtname)
+        - Ich möchte nach [Landshut] (stadtname)
+        - Fahr mich nach [Obernzell] (stadtname)
+        - Wie fährt man nach [Aldersbach] (stadtname)
+        - Gibt es einen Zug nach [Füstenzell] (stadtname)
+
+- intent: ask_staff_available
+  examples: |
+        - Gibt es an dem Bahnhof personal
+        - Kann ich mir die Tickets beim Personal kaufen
+        - Kann mir vor Ort jemand helfen
+        - Gibt es dort jemand der mir helfen kann
+        - Ist es möglich dass mir dort jemand hilft
+        - Habt ihr am Bahnhof Angestellte
+        - Gibt es Personal vor Ort
+        
+- intent: ask_way_home
+  examples: |
+        - Bring mich bitte zurück nach [Passau] (wohnort)
+        - Ich habe den Zug verpasst. Bring mich zurück nach [Vilshofen] (wohnort)
+        - Zurück nach [Mainkhofen] bitte (wohnort)
+        - Schick mich nach [Berlin] zurück (wohnort)
+
+- intent: ask_arrival_time
+  examples: |
+        - Wann sind wir da
+        - Sind wir schon da
+        - Wann sind wir denn endlich da
+        - Wann komme ich an
+        - Wie lange dauert das noch
+        - Ich fahre schon so lange
+        - Nimmt diese Fahrt irgendwann ein Ende
+
+- intent: ask_price_range_deggendorf
+  examples: |
+        - Wie viel kostet mich die Fahrt nach Deggendorf
+        - Was kostet die Fahrt
+        - Mit welchen Kosten kann ich rechnen
+        - Ist die Fahrt teuer
+        - Wie viel wird für die Fahrt verlagt
+
+entities:
+    - stadtname
+    - wohnort
+
+slots:
+    stadtname:
+    type: text
