@@ -21,12 +21,12 @@ nlu:
       
 - intent: train_to_somewhere
   examples: |
-        - Bring mich nach [München] (stadtname)
-        - Wie komme ich nach [Passau] (stadtname)
-        - Ich möchte nach [Landshut] (stadtname)
-        - Fahr mich nach [Obernzell] (stadtname)
-        - Wie fährt man nach [Aldersbach] (stadtname)
-        - Gibt es einen Zug nach [Füstenzell] (stadtname)
+        - Bring mich nach [München](stadtname)
+        - Wie komme ich nach [Passau](stadtname)
+        - Ich möchte nach [Landshut](stadtname)
+        - Fahr mich nach [Obernzell](stadtname)
+        - Wie fährt man nach [Aldersbach](stadtname)
+        - Gibt es einen Zug nach [Füstenzell](stadtname)
 
 - intent: ask_staff_available
   examples: |
@@ -40,10 +40,10 @@ nlu:
         
 - intent: ask_way_home
   examples: |
-        - Bring mich bitte zurück nach [Passau] (wohnort)
-        - Ich habe den Zug verpasst. Bring mich zurück nach [Vilshofen] (wohnort)
-        - Zurück nach [Mainkhofen] bitte (wohnort)
-        - Schick mich nach [Berlin] zurück (wohnort)
+        - Bring mich bitte zurück nach [Passau](wohnort)
+        - Ich habe den Zug verpasst. Bring mich zurück nach [Vilshofen](wohnort)
+        - Zurück nach [Mainkhofen](wohnort) bitte 
+        - Schick mich nach [Berlin](wohnort) zurück 
 
 - intent: ask_arrival_time
   examples: |
@@ -63,10 +63,3 @@ nlu:
         - Ist die Fahrt teuer
         - Wie viel wird für die Fahrt verlagt
 
-entities:
-    - stadtname
-    - wohnort
-
-slots:
-    stadtname:
-    type: text

@@ -9,22 +9,18 @@ intents:
   - ask_arrival_time
   - ask_price_range_deggendorf
 
-entities:
-    - stadtname
-    - wohnort
 
 responses:
     utter_greet:
        - text: |
-           Hello! How can I help you?
+           Hallo! Wie kann ich helfen?
        - text: |
-           Hi!
-    utter_ask_email:
+           Guten Tag!
+    utter_train_to_somewhere:
        - text: |
-           What is your email address?
-    utter_deggendorf_train:
+           Klar, ich bringe dich gerne nach {stadtname}
        - text: |
-           Der nächste Zug fährt in 10 minuten an Gleis 5
+           Sehr gern leite ich dich nach {stadtname}
     utter_staff_availability:
         - text: |
             An diesem Bahnhof gibt es leider kein Personal. Tickets müssen am Schalter erworben werden.
@@ -38,6 +34,19 @@ responses:
         - text: |
             Die Kosten für eine Fahr variieren zwischen 15 und 17 Euro.
             
+            
+            
+entities:
+  - stadtname
+  - wohnort
+
+slots:
+  stadtname:
+    type: text
+  wohnort:
+    type: text
+        
+
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
