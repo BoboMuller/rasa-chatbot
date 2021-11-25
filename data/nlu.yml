@@ -5,20 +5,15 @@ nlu:
 
 - intent: greet
   examples: |
-    - Hi
-    - Hey!
     - Hallo
-    - Good day
-    - Good morning
+    - Tagchen
+    - Guten Tag
+    - Hi
+    - Moin
+    - Grüße
+    - Morgen
 
-- intent: train_to_deggendorf
-  examples: |
-      - Wie komme ich nach Deggendorf
-      - Welcher Zug fährt nach Deggendorf
-      - Welchen Zug nimmt man nach Deggendorf
-      - Schick mich nach Deggendorf
-      - Welchen Zug kann ich nach Deggendorf nehmen
-      
+
 - intent: train_to_somewhere
   examples: |
         - Bring mich nach [München](stadtname)
@@ -27,10 +22,15 @@ nlu:
         - Fahr mich nach [Obernzell](stadtname)
         - Wie fährt man nach [Aldersbach](stadtname)
         - Gibt es einen Zug nach [Füstenzell](stadtname)
+        - Welcher Zug fährt nach [Regensburg](stadtname)
+        - Welchen Zug nimmt man nach [Aunkirchen](stadtname)
+        - Schick mich nach [Münster](stadtname)
+        - Welchen Zug kann ich nach [Deggendorf](stadtname) nehmen
+        - Wann fährt der Zug nach [Hannover](stadtname)
 
 - intent: ask_staff_available
   examples: |
-        - Gibt es an dem Bahnhof personal
+        - Gibt es an dem Bahnhof Personal
         - Kann ich mir die Tickets beim Personal kaufen
         - Kann mir vor Ort jemand helfen
         - Gibt es dort jemand der mir helfen kann
@@ -62,4 +62,5 @@ nlu:
         - Mit welchen Kosten kann ich rechnen
         - Ist die Fahrt teuer
         - Wie viel wird für die Fahrt verlagt
-
+        
+   
