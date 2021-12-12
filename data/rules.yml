@@ -2,9 +2,3 @@ version: "2.0"
 
 rules:
 
- - rule: deggendorf
-   condition:
-   - active_loop: utter_deggendorf
-   steps:
-   - action: utter_ask_time
-   - active_loop: null

@@ -11,22 +11,88 @@ from typing import Any, Text, Dict, List
 
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
+import requests
 
-#Nicht getestet
-class get_train_id(Location):
-    plan = requests.get("https://api.deutschebahn.com/freeplan/v1/location/" + Location)
-    plan = plan.json()
-    return plan[0]["id"]
 
-class ActionHelloWorld(Action):
+    
+    #functions tested in IDE but not Rasa
+    
+class Action_train_to_destination(Action):
+    def name(self):
+        return "action_train_to_destination"
+        
+    
+    def get_train_id(self, Location):
+        plan = requests.get("https://api.deutschebahn.com/freeplan/v1/location/" + Location)
+        print(plan)
+        plan = plan.json()
+        return plan[0]["id"]
 
-    def name(self) -> Text:
-        return "action_details"
 
+    def build_journey_url(self, start, end, time_from_now=0, results=1):
+        start = self.get_train_id(start)
+        if end == "Deggendorf":
+            end = 8001397
+        else:
+            end = self.get_train_id(end)
+        return f'https://v5.db.transport.rest/journeys?from={start}&to={end}&results={results}'
+
+    def extract_stopovers(journey_url):
+        halts = []
+        middle = ""
+        formulierung = " Umstiege sind bei "
+        # Deggendorf ID 8001397
+        # departure inklusive verspätung falls vorhanden
+        # departuredelay in sekunden
+        # departurePlatform: Gleis bei Abfahrt
+        # arrivalPlatform: Gleis bei Ankunft
+        # Array in legs bestehend aus Arrays mit den verschiedenen Einzelfahrten von a nach b
+        stops = requests.get(journey_url).json()
+        journey = stops["journeys"][0]["legs"]
+        if len(journey) > 1:
+            for umstieg in journey[:-1]:
+                halts.append(umstieg["destination"]["name"])
+            for stop in halts[:-1]:
+                if middle != "":
+                    middle = middle + ", " + stop
+                else:
+                    middle = stop
+            if middle == "":
+                middle = formulierung + middle + halts[-1] + " erforderlich."
+            else:
+                middle = formulierung + middle + " und " + halts[-1] + " erforderlich."
+        return journey, middle
+
+    def formulate_answer(extracted_stepovers):
+        journey, middle = extracted_stepovers
+        ans = f'Um von {journey[0]["origin"]["name"]} nach {journey[-1]["destination"]["name"]} zu kommen musst du um {journey[0]["departure"][11:16]} zum Gleis Nummer {journey[0]["departurePlatform"]} gehen.' + middle
+        return(ans)
+    
+    
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
-        dispatcher.utter_message(text="Hello World!")
-
+            
+        a = self.build_journey_url("Passau", "Berlin")
+        b = self.extract_stopovers(a)
+        c = formulate_answer(b)
+        dispatcher.utter_message(c)
+        
         return []
+        
+    
+    
+    
+
+# class ActionHelloWorld(Action):
+
+    # def name(self) -> Text:
+        # return "action_details"
+
+    # def run(self, dispatcher: CollectingDispatcher,
+            # tracker: Tracker,
+            # domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        # dispatcher.utter_message(text="Hello World!")
+
+        # return []

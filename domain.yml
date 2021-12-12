@@ -2,13 +2,20 @@ version: "2.0"
 
 intents:
   - greet
-  - train_to_somewhere
+  - train_to_destination
   - train_to_deggendorf
   - ask_staff_available
   - ask_way_home
   - ask_arrival_time
   - ask_price_range_deggendorf
 
+actions:
+  - utter_expected_arrival
+  - utter_greet
+  - utter_price_range_to_deggendorf
+  - utter_staff_availability
+  - utter_way_home
+  - action_train_to_destination
 
 responses:
     utter_greet:
@@ -37,14 +44,14 @@ responses:
             
             
 entities:
-  - stadtname
-  - wohnort
+ - stadtname
+ - wohnort
 
 slots:
-  stadtname:
-    type: text
-  wohnort:
-    type: text
+ stadtname:
+   type: text
+ wohnort:
+   type: text
         
 
 session_config:

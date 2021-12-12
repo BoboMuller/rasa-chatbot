@@ -14,7 +14,7 @@ nlu:
     - Morgen
 
 
-- intent: train_to_somewhere
+- intent: train_to_destination
   examples: |
         - Bring mich nach [München](stadtname)
         - Wie komme ich nach [Passau](stadtname)
