@@ -11,6 +11,7 @@ from typing import Any, Text, Dict, List
 
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
+from rasa_sdk.events import SlotSet
 import requests
 
 
@@ -37,7 +38,7 @@ class Action_train_to_destination(Action):
             end = self.get_train_id(end)
         return f'https://v5.db.transport.rest/journeys?from={start}&to={end}&results={results}'
 
-    def extract_stopovers(journey_url):
+    def extract_stopovers(self, journey_url):
         halts = []
         middle = ""
         formulierung = " Umstiege sind bei "
@@ -63,7 +64,7 @@ class Action_train_to_destination(Action):
                 middle = formulierung + middle + " und " + halts[-1] + " erforderlich."
         return journey, middle
 
-    def formulate_answer(extracted_stepovers):
+    def formulate_answer(self, extracted_stepovers):
         journey, middle = extracted_stepovers
         ans = f'Um von {journey[0]["origin"]["name"]} nach {journey[-1]["destination"]["name"]} zu kommen musst du um {journey[0]["departure"][11:16]} zum Gleis Nummer {journey[0]["departurePlatform"]} gehen.' + middle
         return(ans)
@@ -73,12 +74,12 @@ class Action_train_to_destination(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
             
-        a = self.build_journey_url("Passau", "Berlin")
+        a = self.build_journey_url("Passau", tracker.get_slot('stadtname'))
         b = self.extract_stopovers(a)
-        c = formulate_answer(b)
+        c = self.formulate_answer(b)
         dispatcher.utter_message(c)
         
-        return []
+        return [SlotSet("stadtname", None)]
         
     
     
