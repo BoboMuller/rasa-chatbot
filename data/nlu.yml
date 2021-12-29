@@ -15,7 +15,6 @@ nlu:
     - Moinsen
     - Gude
 
-
 - intent: train_to_destination
   examples: |
         - Bring mich nach [München](stadtname)
@@ -49,7 +48,6 @@ nlu:
         - Wo finde ich das Personal
         - Wie finde ich das Personal
         - Kann mir wer helfen
-
 
 - intent: ask_arrival_time
   examples: |
