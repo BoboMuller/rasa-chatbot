@@ -5,6 +5,7 @@ intents:
   - train_to_destination
   - ask_staff_available
   - ask_arrival_time
+  - fav_route
   - ask_price_range_deggendorf
 
 actions:
@@ -12,6 +13,7 @@ actions:
   - utter_greet
   - utter_price_range_to_deggendorf
   - utter_staff_availability
+  - action_fav_route
   - action_train_to_destination
 
 responses:
@@ -31,13 +33,13 @@ responses:
        - text: |
            Was darf es denn sein?
 
-     utter_train_to_destination:
-        - text: |
-            Klar, ich bringe dich gerne nach {stadtname}
-        - text: |
-            Sehr gern leite ich dich nach {stadtname}
-        - text: |
-            Hier ist die nächste gelegenheit um nach {stadtname} zu gelangen.
+#    utter_train_to_destination:
+#        - text: |
+#            Klar, ich bringe dich gerne nach {stadtname}
+#        - text: |
+#            Sehr gern leite ich dich nach {stadtname}
+#        - text: |
+#            Hier ist die nächste gelegenheit um nach {stadtname} zu gelangen.
 
     utter_staff_availability:
         - text: |
@@ -67,6 +69,7 @@ entities:
  - stadtname
  - wohnort
  - ankunftszeit
+ - fav
 
 slots:
  stadtname:
