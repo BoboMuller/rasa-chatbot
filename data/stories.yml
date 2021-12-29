@@ -30,12 +30,12 @@ stories:
    - intent: ask_arrival_time
    - action: utter_expected_arrival
 
-- story: add to favourites
-  steps:
-    - intent: greet
-    - action: utter_greet
-    - intent: fav_route
-    - action: action_fav_route
+ - story: add to favourites
+   steps:
+   - intent: greet
+   - action: utter_greet
+   - intent: fav_route
+   - action: action_fav_route
 
  - story: ask about the price
    steps:
@@ -43,3 +43,10 @@ stories:
    - action: utter_greet
    - intent: ask_price_range_deggendorf
    - action: utter_price_range_to_deggendorf
+
+ - story: ask functions
+   steps:
+   - intent: greet
+   - action: utter_greet
+   - intent: ask_function
+   - action: utter_function
