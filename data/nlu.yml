@@ -79,3 +79,12 @@ nlu:
         - Was koste mich das
         - Wie viel Geld
         - Kosten
+
+- intent: ask_function
+  examples: |
+        - Wie funktionierst du
+        - Wie nutze ich dich
+        - Hast du eine Anleitung
+        - Was kannst du alles
+        - Wie kannst du mir helfen
+        - Kannst du mir helfen
