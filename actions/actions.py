@@ -57,7 +57,7 @@ class Action_price(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        strt="Passaiú"
+        strt="Passau"
         dstn = tracker.get_slot('stadtname')
         a = build_journey_url(strt, dstn)
         price = a[journeys[0]["price"]]
