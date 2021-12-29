@@ -68,7 +68,7 @@ nlu:
         - Zu favouriten hinzufügen
         - bitte füg [Münster](stadtname) zu meinen favouriten
 
-- intent: ask_price
+- intent: price
   examples: |
         - Wie viel kostet mich die Fahrt nach [Deggendorf](stadtname)
         - Was kostet die Fahrt

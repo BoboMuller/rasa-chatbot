@@ -50,9 +50,9 @@ class Action_fav_route(Action):
         dispatcher.utter_message(msg)
         pass
         
-class Utter_price(Action):
+class Action_price(Action):
     def name(self):
-        return "utter_price"
+        return "action_price"
     
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
