@@ -115,7 +115,7 @@ class Action_ask_time(Action):
         return "action_train_arrival_time"
         
     def extract_time(self, journey_url):
-        
+            pass
         
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,

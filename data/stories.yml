@@ -16,13 +16,6 @@ stories:
    - intent: ask_staff_available
    - action: utter_staff_availability
 
- - story: missed the train
-   steps:
-   - intent: greet
-   - action: utter_greet
-   - intent: ask_way_home
-   - action: utter_way_home
-
  - story: ask arrival
    steps:
    - intent: greet
