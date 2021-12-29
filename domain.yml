@@ -23,11 +23,11 @@ responses:
            Hallo! Wie kann ich helfen?
        - text: |
            Guten Tag!
-    utter_train_to_somewhere:
-       - text: |
-           Klar, ich bringe dich gerne nach {stadtname}
-       - text: |
-           Sehr gern leite ich dich nach {stadtname}
+    # utter_train_to_somewhere:
+       # - text: |
+           # Klar, ich bringe dich gerne nach {stadtname}
+       # - text: |
+           # Sehr gern leite ich dich nach {stadtname}
     utter_staff_availability:
         - text: |
             An diesem Bahnhof gibt es leider kein Personal. Tickets müssen am Schalter erworben werden.
@@ -50,6 +50,8 @@ entities:
 slots:
  stadtname:
    type: text
+   - type: from_entity
+       entity: stadtname
  wohnort:
    type: text
         

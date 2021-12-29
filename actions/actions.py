@@ -79,7 +79,7 @@ class Action_train_to_destination(Action):
         c = self.formulate_answer(b)
         dispatcher.utter_message(c)
         
-        return [SlotSet("stadtname", None)]
+        return []
         
     
     
