@@ -54,6 +54,9 @@ responses:
             Du bist um etwa {ankunftszeit} am Ziel.
         - text: |
             Du solltest in {ankunftszeit} ankommen.
+        - text: |
+            Du benötigst noch {ankunftszeit} bis zum Ziel.
+
     utter_price_range_to_deggendorf:
         - text: |
             Die Kosten für eine Fahrt variieren zwischen 15 und 17 Euro.
