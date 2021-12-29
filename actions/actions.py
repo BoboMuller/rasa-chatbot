@@ -70,7 +70,6 @@ class Action_train_to_destination(Action):
 
     
     
-    
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
@@ -83,7 +82,24 @@ class Action_train_to_destination(Action):
         return []
         
     
+class Action_ask_time(Action):
     
+    def name(self):
+        return "action_train_arrival_time"
+        
+    def extract_time(self, journey_url):
+        
+        
+    def run(self, dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+            
+        journey_url = build_journey_url("Passau", tracker.get_slot('stadtname'))
+        b = journey_url["journeys"][0]["legs"][-1]["arrival"][11:16]
+        
+        dispatcher.utter_message(b)
+        
+        return []
     
 
 # class ActionHelloWorld(Action):
