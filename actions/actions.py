@@ -46,11 +46,25 @@ class Action_fav_route(Action):
         
         fav = tracker.get_slot('stadtname')
         SlotSet('fav',fav)
-        msg = f"{fav} wurde als Favorit hinterlegt."
+        msg = f'{fav} wurde als Favorit hinterlegt.'
         dispatcher.utter_message(msg)
         pass
         
-        
+class Utter_price(Action):
+    def name(self):
+        return "utter_price"
+    
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        strt="Passaiú"
+        dstn = tracker.get_slot('stadtname')
+        a = build_journey_url(strt, dstn)
+        price = a[journeys[0]["price"]]
+        msg = f"Du musst um von {strt} nach {stadtname} zu kommen {price}€ Zahlen"
+        dispatcher.utter_message(msg)
+        pass
+    
 class Action_train_to_destination(Action):
     def name(self):
         return "action_train_to_destination"
@@ -94,8 +108,7 @@ class Action_train_to_destination(Action):
         dispatcher.utter_message(c)
         
         return []
-        
-    
+           
 class Action_ask_time(Action):
     
     def name(self):
@@ -105,8 +118,8 @@ class Action_ask_time(Action):
         
         
     def run(self, dispatcher: CollectingDispatcher,
-        tracker: Tracker,
-        domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
             
         journey_url = build_journey_url("Passau", tracker.get_slot('stadtname'))
         b = journey_url["journeys"][0]["legs"][-1]["arrival"][11:16]

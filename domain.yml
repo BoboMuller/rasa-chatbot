@@ -6,13 +6,15 @@ intents:
   - ask_staff_available
   - ask_arrival_time
   - fav_route
-  - ask_price_range_deggendorf
+#  - ask_price_range_deggendorf
+  - ask_price
   - ask_function
 
 actions:
   - utter_expected_arrival
   - utter_greet
-  - utter_price_range_to_deggendorf
+#  - utter_price_range_to_deggendorf
+  - utter_price
   - utter_staff_availability
   - utter_function
   - action_fav_route
@@ -61,9 +63,9 @@ responses:
         - text: |
             Du benötigst noch {ankunftszeit} bis zum Ziel.
 
-    utter_price_range_to_deggendorf:
-        - text: |
-            Die Kosten für eine Fahrt variieren zwischen 15 und 17 Euro.
+#    utter_price_range_to_deggendorf:
+#        - text: |
+#            Die Kosten für eine Fahrt variieren zwischen 15 und 17 Euro.
 
     utter_function:
         - text: |
