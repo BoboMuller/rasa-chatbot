@@ -36,7 +36,21 @@ def formulate_answer(extracted_stepovers):
         ans = f'Um von {journey[0]["origin"]["name"]} nach {journey[-1]["destination"]["name"]} zu kommen musst du um {journey[0]["departure"][11:16]} zum Gleis Nummer {journey[0]["departurePlatform"]} gehen.' + middle
         return(ans)
 
+class Action_fav_route(Action):
+    def name(self):
+        return "action_fav_route"
     
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        fav = tracker.get_slot('stadtname')
+        SlotSet('fav',fav)
+        msg = f"{fav} wurde als Favorit hinterlegt."
+        dispatcher.utter_message(msg)
+        pass
+        
+        
 class Action_train_to_destination(Action):
     def name(self):
         return "action_train_to_destination"

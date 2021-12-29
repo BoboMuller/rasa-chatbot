@@ -61,6 +61,13 @@ nlu:
         - Kommen wir bald an
         - Ich möchte nicht mehr fahren
 
+- intent: fav_route
+  examples: |
+        - Ich möchte das Ziel zu meinen favouriten hinzufügen
+        - füge [München](stadtname) als favourite hinzu
+        - Zu favouriten hinzufügen
+        - bitte füg [Münster](stadtname) zu meinen favouriten
+
 - intent: ask_price_range_deggendorf
   examples: |
         - Wie viel kostet mich die Fahrt nach Deggendorf
@@ -72,3 +79,12 @@ nlu:
         - Was koste mich das
         - Wie viel Geld
         - Kosten
+
+- intent: ask_function
+  examples: |
+        - Wie funktionierst du
+        - Wie nutze ich dich
+        - Hast du eine Anleitung
+        - Was kannst du alles
+        - Wie kannst du mir helfen
+        - Kannst du mir helfen

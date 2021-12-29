@@ -5,13 +5,17 @@ intents:
   - train_to_destination
   - ask_staff_available
   - ask_arrival_time
+  - fav_route
   - ask_price_range_deggendorf
+  - ask_function
 
 actions:
   - utter_expected_arrival
   - utter_greet
   - utter_price_range_to_deggendorf
   - utter_staff_availability
+  - utter_function
+  - action_fav_route
   - action_train_to_destination
 
 responses:
@@ -31,13 +35,13 @@ responses:
        - text: |
            Was darf es denn sein?
 
-     utter_train_to_destination:
-        - text: |
-            Klar, ich bringe dich gerne nach {stadtname}
-        - text: |
-            Sehr gern leite ich dich nach {stadtname}
-        - text: |
-            Hier ist die nächste gelegenheit um nach {stadtname} zu gelangen.
+#    utter_train_to_destination:
+#        - text: |
+#            Klar, ich bringe dich gerne nach {stadtname}
+#        - text: |
+#            Sehr gern leite ich dich nach {stadtname}
+#        - text: |
+#            Hier ist die nächste gelegenheit um nach {stadtname} zu gelangen.
 
     utter_staff_availability:
         - text: |
@@ -61,12 +65,26 @@ responses:
         - text: |
             Die Kosten für eine Fahrt variieren zwischen 15 und 17 Euro.
 
+    utter_function:
+        - text: |
+            Du kannst mich Fragen wie du zu deinem Ziel kommst
+        - text: |
+            Ich kann dir sagen, ob Personal in deiner nähe ist.
+        - text: |
+            Ich kann dir beantworten, wie viel dich ein Ticket kosten würde.
+        - text: |
+            Ich kann dir favouriten speichern.
+        - text: |
+            Ich kann dir sagen, wann du an deinem Ziel ankommst-
+        - text: |
+
 
 
 entities:
  - stadtname
  - wohnort
  - ankunftszeit
+ - fav
 
 slots:
  stadtname:

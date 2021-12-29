@@ -1,7 +1,7 @@
 version: "2.0"
 
 stories:
-   
+
  - story: train to destination
    steps:
    - intent: greet
@@ -30,12 +30,16 @@ stories:
    - intent: ask_arrival_time
    - action: utter_expected_arrival
 
+- story: add to favourites
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: fav_route
+    - action: action_fav_route
+
  - story: ask about the price
    steps:
    - intent: greet
    - action: utter_greet
    - intent: ask_price_range_deggendorf
    - action: utter_price_range_to_deggendorf
-   
-
-   
