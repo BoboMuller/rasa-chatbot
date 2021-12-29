@@ -15,28 +15,32 @@ from rasa_sdk.events import SlotSet
 import requests
 
 
-    
-    #functions tested in IDE but not Rasa
+def get_train_id(Location):
+    plan = requests.get("https://api.deutschebahn.com/freeplan/v1/location/" + Location)
+    # print(plan)
+    plan = plan.json()
+    return plan[0]["id"]
+
+
+def build_journey_url(start, end, time_from_now=0, results=1):
+        start = get_train_id(start)
+        if end == "Deggendorf":
+            end = 8001397
+        else:
+            end = get_train_id(end)
+        return f'https://v5.db.transport.rest/journeys?from={start}&to={end}&results={results}'
+
+
+def formulate_answer(extracted_stepovers):
+        journey, middle = extracted_stepovers
+        ans = f'Um von {journey[0]["origin"]["name"]} nach {journey[-1]["destination"]["name"]} zu kommen musst du um {journey[0]["departure"][11:16]} zum Gleis Nummer {journey[0]["departurePlatform"]} gehen.' + middle
+        return(ans)
+
     
 class Action_train_to_destination(Action):
     def name(self):
         return "action_train_to_destination"
         
-    
-    def get_train_id(self, Location):
-        plan = requests.get("https://api.deutschebahn.com/freeplan/v1/location/" + Location)
-        print(plan)
-        plan = plan.json()
-        return plan[0]["id"]
-
-
-    def build_journey_url(self, start, end, time_from_now=0, results=1):
-        start = self.get_train_id(start)
-        if end == "Deggendorf":
-            end = 8001397
-        else:
-            end = self.get_train_id(end)
-        return f'https://v5.db.transport.rest/journeys?from={start}&to={end}&results={results}'
 
     def extract_stopovers(self, journey_url):
         halts = []
@@ -64,19 +68,16 @@ class Action_train_to_destination(Action):
                 middle = formulierung + middle + " und " + halts[-1] + " erforderlich."
         return journey, middle
 
-    def formulate_answer(self, extracted_stepovers):
-        journey, middle = extracted_stepovers
-        ans = f'Um von {journey[0]["origin"]["name"]} nach {journey[-1]["destination"]["name"]} zu kommen musst du um {journey[0]["departure"][11:16]} zum Gleis Nummer {journey[0]["departurePlatform"]} gehen.' + middle
-        return(ans)
+    
     
     
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
             
-        a = self.build_journey_url("Passau", tracker.get_slot('stadtname'))
+        a = build_journey_url("Passau", tracker.get_slot('stadtname'))
         b = self.extract_stopovers(a)
-        c = self.formulate_answer(b)
+        c = formulate_answer(b)
         dispatcher.utter_message(c)
         
         return []
