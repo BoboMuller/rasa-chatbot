@@ -12,6 +12,8 @@ nlu:
     - Moin
     - Grüße
     - Morgen
+    - Moinsen
+    - Gude
 
 
 - intent: train_to_destination
@@ -27,6 +29,12 @@ nlu:
         - Schick mich nach [Münster](stadtname)
         - Welchen Zug kann ich nach [Deggendorf](stadtname) nehmen
         - Wann fährt der Zug nach [Hannover](stadtname)
+        - Fährt ein Zug nach [Mainz](stadtname)
+        - Bring mich bitte zurück nach [Gießen](stadtname)
+        - Ich habe den Zug verpasst. Bring mich zurück nach [Vilshofen](stadtname)
+        - Zurück nach [Mainkhofen](stadtname) bitte
+        - Ich will zurück nach [Frankfurt](wohnort)
+        - Bitte zurück nach [Aschaffenburg](wohnort)
 
 - intent: ask_staff_available
   examples: |
@@ -37,13 +45,11 @@ nlu:
         - Ist es möglich dass mir dort jemand hilft
         - Habt ihr am Bahnhof Angestellte
         - Gibt es Personal vor Ort
-        
-- intent: ask_way_home
-  examples: |
-        - Bring mich bitte zurück nach [Passau](wohnort)
-        - Ich habe den Zug verpasst. Bring mich zurück nach [Vilshofen](wohnort)
-        - Zurück nach [Mainkhofen](wohnort) bitte 
-        - Schick mich nach [Berlin](wohnort) zurück 
+        - Wo ist das Personal
+        - Wo finde ich das Personal
+        - Wie finde ich das Personal
+        - Kann mir wer helfen
+
 
 - intent: ask_arrival_time
   examples: |
@@ -54,6 +60,8 @@ nlu:
         - Wie lange dauert das noch
         - Ich fahre schon so lange
         - Nimmt diese Fahrt irgendwann ein Ende
+        - Kommen wir bald an
+        - Ich möchte nicht mehr fahren
 
 - intent: ask_price_range_deggendorf
   examples: |
@@ -61,6 +69,8 @@ nlu:
         - Was kostet die Fahrt
         - Mit welchen Kosten kann ich rechnen
         - Ist die Fahrt teuer
-        - Wie viel wird für die Fahrt verlagt
-        
-   
+        - Wie viel wird für die Fahrt verlangt
+        - Wie teuer ist die Fahrt
+        - Was koste mich das
+        - Wie viel Geld
+        - Kosten
