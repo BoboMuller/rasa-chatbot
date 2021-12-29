@@ -88,12 +88,14 @@ entities:
  - fav
 
 slots:
- stadtname:
-   type: text
-   - type: from_entity
-       entity: stadtname
- wohnort:
-   type: text
+  stadtname:
+    type: text
+  wohnort:
+    type: text
+  fav:
+    type: text
+  ankunftszeit:
+    type: text
 
 
 session_config:
