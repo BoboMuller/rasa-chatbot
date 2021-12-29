@@ -3,9 +3,7 @@ version: "2.0"
 intents:
   - greet
   - train_to_destination
-  - train_to_deggendorf
   - ask_staff_available
-  - ask_way_home
   - ask_arrival_time
   - ask_price_range_deggendorf
 
@@ -14,7 +12,6 @@ actions:
   - utter_greet
   - utter_price_range_to_deggendorf
   - utter_staff_availability
-  - utter_way_home
   - action_train_to_destination
 
 responses:
@@ -23,29 +20,50 @@ responses:
            Hallo! Wie kann ich helfen?
        - text: |
            Guten Tag!
-    # utter_train_to_somewhere:
-       # - text: |
-           # Klar, ich bringe dich gerne nach {stadtname}
-       # - text: |
-           # Sehr gern leite ich dich nach {stadtname}
+       - text: |
+           Willkommen bei Ihrem Bahn-Assistenten. Wie kann ich behilflich sein?
+       - text: |
+           Wie kann ich helfen?
+       - text: |
+           Sie haben gerufen?
+       - text: |
+           Wohin darf es denn gehen?
+       - text: |
+           Was darf es denn sein?
+
+     utter_train_to_destination:
+        - text: |
+            Klar, ich bringe dich gerne nach {stadtname}
+        - text: |
+            Sehr gern leite ich dich nach {stadtname}
+        - text: |
+            Hier ist die nächste gelegenheit um nach {stadtname} zu gelangen.
+
     utter_staff_availability:
         - text: |
             An diesem Bahnhof gibt es leider kein Personal. Tickets müssen am Schalter erworben werden.
-    utter_way_home:
         - text: |
-            Die nächste gelegenheit um zurück nach {wohnort} zu fahren ist in 15 min.
+            Es tut mir leid, es wurde kein Personal gefunden. Fragen können auch Online beantwortet werden.
+        - text: |
+            Hier befindet sich kein Personal. Tickets müssen am Schalter erworben werden.
+        - text: |
+            Es konnte kein Personal in Ihrer Umgebung gefunden werden.
+
     utter_expected_arrival:
         - text: |
             Du bist um etwa {ankunftszeit} am Ziel.
+        - text: |
+            Du solltest in {ankunftszeit} ankommen.
     utter_price_range_to_deggendorf:
         - text: |
-            Die Kosten für eine Fahr variieren zwischen 15 und 17 Euro.
-            
-            
-            
+            Die Kosten für eine Fahrt variieren zwischen 15 und 17 Euro.
+
+
+
 entities:
  - stadtname
  - wohnort
+ - ankunftszeit
 
 slots:
  stadtname:
@@ -54,7 +72,7 @@ slots:
        entity: stadtname
  wohnort:
    type: text
-        
+
 
 session_config:
   session_expiration_time: 60
