@@ -7,14 +7,14 @@ intents:
   - ask_arrival_time
   - fav_route
 #  - ask_price_range_deggendorf
-  - ask_price
+  - price
   - ask_function
 
 actions:
   - utter_expected_arrival
   - utter_greet
 #  - utter_price_range_to_deggendorf
-  - utter_price
+  - action_price
   - utter_staff_availability
   - utter_function
   - action_fav_route
