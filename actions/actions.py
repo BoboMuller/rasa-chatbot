@@ -60,8 +60,9 @@ class Action_price(Action):
         strt="Passau"
         dstn = tracker.get_slot('stadtname')
         a = build_journey_url(strt, dstn)
-        price = a["journeys"][0]["price"]
-        msg = f"Du musst um von {strt} nach {stadtname} zu kommen {price}€ Zahlen"
+        a = requests.get(a).json()
+        price = a["journeys"][0]["price"]["amount"]
+        msg = f"Du musst um von {strt} nach {dstn} zu kommen {price}€ zahlen"
         dispatcher.utter_message(msg)
         pass
     

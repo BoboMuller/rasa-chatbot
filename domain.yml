@@ -90,12 +90,24 @@ entities:
 slots:
   stadtname:
     type: text
+    mappings:
+    - type: from_entity
+      entity: stadtname   
   wohnort:
     type: text
+    mappings:
+    - type: from_entity
+      entity: wohnort
   fav:
     type: text
+    mappings:
+    - type: from_entity
+      entity: fav 
   ankunftszeit:
     type: text
+    mappings:
+    - type: from_entity
+      entity: ankunftszeit 
 
 
 session_config:
