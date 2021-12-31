@@ -94,3 +94,11 @@ nlu:
         - Du bist ein Lebensretter
         - Thanks
         - Vielen lieben Dank
+        
+- intent: buy_ticket
+  examples: |
+        - Buch mir die Fahrt
+        - Kauf mir ein Ticket
+        - Kauf mir eine Fahrkarte
+        - Dann kauf mir eine Fahrt
+        - Bring mich dann hin

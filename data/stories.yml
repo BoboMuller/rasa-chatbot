@@ -8,7 +8,12 @@ stories:
    - action: utter_greet
    - intent: train_from_to_destination
    - action: action_train_from_to_destination
-
+   - intent: buy_ticket
+   - action: utter_buy_ticket
+   - intent: buy_ticket
+   - action: utter_buy_ticket
+   ## buy_ticket zwei mal weil Rasa keine Reaktion zeigt wenn es hier nur ein mal steht...
+   
  - story: ask for staff
    steps:
    - intent: greet
@@ -48,3 +53,8 @@ stories:
    steps:
    - intent: thank
    - action: utter_thanks_response
+
+
+   
+   
+
