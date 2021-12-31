@@ -2,7 +2,7 @@ version: "2.0"
 
 intents:
   - greet
-  - train_to_destination
+  - train_from_to_destination
   - ask_staff_available
   - ask_arrival_time
   - fav_route
@@ -18,7 +18,7 @@ actions:
   - utter_staff_availability
   - utter_function
   - action_fav_route
-  - action_train_to_destination
+  - action_train_from_to_destination
   - action_train_arrival_time
 
 responses:
@@ -71,6 +71,7 @@ entities:
  - stadtname
  - ankunftszeit
  - fav
+ - startstadt
 
 slots:
   stadtname:
@@ -78,6 +79,12 @@ slots:
     mappings:
     - type: from_entity
       entity: stadtname
+
+  startstadt:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: startstadt
 
   fav:
     type: text

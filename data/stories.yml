@@ -6,8 +6,8 @@ stories:
    steps:
    - intent: greet
    - action: utter_greet
-   - intent: train_to_destination
-   - action: action_train_to_destination
+   - intent: train_from_to_destination
+   - action: action_train_from_to_destination
 
  - story: ask for staff
    steps:
@@ -43,8 +43,8 @@ stories:
    - action: utter_greet
    - intent: ask_function
    - action: utter_function
-   
+
  - story: Thanking
-   steps: 
+   steps:
    - intent: thank
    - action: utter_thanks_response

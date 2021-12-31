@@ -15,18 +15,18 @@ nlu:
     - Moinsen
     - Gude
 
-- intent: train_to_destination
+- intent: train_from_to_destination
   examples: |
-        - Bring mich nach [München](stadtname)
-        - Wie komme ich nach [Passau](stadtname)
-        - Ich möchte nach [Landshut](stadtname)
-        - Fahr mich nach [Obernzell](stadtname)
-        - Wie fährt man nach [Aldersbach](stadtname)
-        - Gibt es einen Zug nach [Füstenzell](stadtname)
-        - Welcher Zug fährt nach [Regensburg](stadtname)
-        - Welchen Zug nimmt man nach [Aunkirchen](stadtname)
-        - Schick mich nach [Münster](stadtname)
-        - Welchen Zug kann ich nach [Deggendorf](stadtname) nehmen
+        - Bring mich von [Nürnberg](startstadt) nach [München](stadtname)
+        - Wie komme ich von [Wachenbuchen](startstadt) nach [Passau](stadtname)
+        - Ich möchte von [Plattling](startstadt) nach [Landshut](stadtname)
+        - Fahr mich von [Gießen](startstadt) nach [Obernzell](stadtname)
+        - Wie fährt man von [Bremen](startstadt) nach [Aldersbach](stadtname)
+        - Gibt es einen Zug von [Hamburg](startstadt) nach [Füstenzell](stadtname)
+        - Welcher Zug fährt von [Köln](startstadt) nach [Regensburg](stadtname)
+        - Welchen Zug nimmt man von [Dresden](startstadt) nach [Aunkirchen](stadtname)
+        - Schick mich nach [Münster](stadtname) von [Essen](startstadt)
+        - Welchen Zug kann ich nach [Deggendorf](stadtname) von [Duisburg](startstadt) nehmen
         - Wann fährt der Zug nach [Hannover](stadtname)
         - Fährt ein Zug nach [Mainz](stadtname)
         - Bring mich bitte zurück nach [Gießen](stadtname)
@@ -91,7 +91,7 @@ nlu:
         - Was kannst du alles
         - Wie kannst du mir helfen
         - Kannst du mir helfen
-        
+
 - intent: thank
   examples: |
         - Danke
