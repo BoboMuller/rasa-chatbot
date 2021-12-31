@@ -29,7 +29,7 @@ nlu:
         - Welchen Zug kann ich nach [Deggendorf](stadtname) von [Duisburg](startstadt) nehmen
         - Wann fährt der Zug nach [Hannover](stadtname) von [Düsseldorf](startstadt)
         - Fährt ein Zug von [Augsburg](startstadt) nach [Mainz](stadtname)
-        - Ich will nach [Frankfurt](stadtname) von [Regensburg](stadtname)
+        - Ich will nach [Frankfurt](stadtname) von [Regensburg](startstadt)
 
 - intent: ask_staff_available
   examples: |
@@ -89,4 +89,7 @@ nlu:
   examples: |
         - Danke
         - Vielen Dank
-        - Dankeschöm
+        - Dankeschön
+        - Du bist ein Lebensretter
+        - Thanks
+        - Vielen lieben Dank
