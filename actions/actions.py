@@ -116,6 +116,7 @@ class Action_train_to_destination(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
             
         a = build_journey_url("Passau", tracker.get_slot('stadtname'))
+        print(a)
         b = self.extract_stopovers(a)
         c = self.formulate_answer(b)
         dispatcher.utter_message(c)

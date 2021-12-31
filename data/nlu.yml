@@ -32,8 +32,7 @@ nlu:
         - Bring mich bitte zurück nach [Gießen](stadtname)
         - Ich habe den Zug verpasst. Bring mich zurück nach [Vilshofen](stadtname)
         - Zurück nach [Mainkhofen](stadtname) bitte
-        - Ich will zurück nach [Frankfurt](wohnort)
-        - Bitte zurück nach [Aschaffenburg](wohnort)
+        - Ich will nach [Frankfurt](stadtname)
 
 - intent: ask_staff_available
   examples: |

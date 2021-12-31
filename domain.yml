@@ -80,7 +80,6 @@ responses:
 
 entities:
  - stadtname
- - wohnort
  - ankunftszeit
  - fav
 
@@ -89,12 +88,16 @@ slots:
     type: text
     mappings:
     - type: from_entity
+<<<<<<< Updated upstream
       entity: stadtname
   wohnort:
     type: text
     mappings:
     - type: from_entity
       entity: wohnort
+=======
+      entity: stadtname   
+>>>>>>> Stashed changes
   fav:
     type: text
     mappings:
