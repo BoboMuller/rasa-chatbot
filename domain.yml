@@ -69,15 +69,12 @@ responses:
 
     utter_function:
         - text: |
-            Du kannst mich Fragen wie du zu deinem Ziel kommst
-        - text: |
-            Ich kann dir sagen, ob Personal in deiner nähe ist.
-        - text: |
-            Ich kann dir beantworten, wie viel dich ein Ticket kosten würde.
-        - text: |
-            Ich kann dir favouriten speichern.
-        - text: |
-            Ich kann dir sagen, wann du an deinem Ziel ankommst
+            Ich besitze die folgenden Funktionen:
+             - Du kannst mich Fragen wie du zu deinem Ziel kommst
+             - Ich kann dir sagen, ob Personal in deiner nähe ist.
+             - Ich kann dir beantworten, wie viel dich ein Ticket kosten würde.
+             - Ich kann dir favouriten speichern.
+             - Ich kann dir sagen, wann du an deinem Ziel ankommst
 
 
 
@@ -92,7 +89,7 @@ slots:
     type: text
     mappings:
     - type: from_entity
-      entity: stadtname   
+      entity: stadtname
   wohnort:
     type: text
     mappings:
@@ -102,12 +99,12 @@ slots:
     type: text
     mappings:
     - type: from_entity
-      entity: fav 
+      entity: fav
   ankunftszeit:
     type: text
     mappings:
     - type: from_entity
-      entity: ankunftszeit 
+      entity: ankunftszeit
 
 
 session_config:
