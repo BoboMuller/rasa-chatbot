@@ -27,16 +27,9 @@ nlu:
         - Welchen Zug nimmt man von [Dresden](startstadt) nach [Aunkirchen](stadtname)
         - Schick mich nach [Münster](stadtname) von [Essen](startstadt)
         - Welchen Zug kann ich nach [Deggendorf](stadtname) von [Duisburg](startstadt) nehmen
-        - Wann fährt der Zug nach [Hannover](stadtname)
-        - Fährt ein Zug nach [Mainz](stadtname)
-        - Bring mich bitte zurück nach [Gießen](stadtname)
-        - Ich habe den Zug verpasst. Bring mich zurück nach [Vilshofen](stadtname)
-        - Zurück nach [Mainkhofen](stadtname) bitte
-        - Ich will nach [Frankfurt](stadtname)
-
-- intent: train_from_to_destination
-  examples: |
-        - Ich möchte von [Nürnberg](startstadt) nach [Passau](stadtname)
+        - Wann fährt der Zug nach [Hannover](stadtname) von [Düsseldorf](startstadt)
+        - Fährt ein Zug von [Augsburg](startstadt) nach [Mainz](stadtname)
+        - Ich will nach [Frankfurt](stadtname) von [Regensburg](stadtname)
 
 - intent: ask_staff_available
   examples: |
