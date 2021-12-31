@@ -65,7 +65,11 @@ responses:
              - Ich kann dir favouriten speichern.
              - Ich kann dir sagen, wann du an deinem Ziel ankommst
 
-
+    utter_thanks_response:
+        - text: |
+            Bitteschöm
+        - text: |
+            Wir helfen jederzeit gerne
 
 entities:
  - stadtname

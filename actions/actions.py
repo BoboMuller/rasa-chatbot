@@ -78,7 +78,7 @@ class Action_price(Action):
     
 class Action_train_to_destination(Action):
     def name(self):
-        return "action_train_to_destination"
+        return "action_train_from_to_destination"
         
     def formulate_answer(self, extracted_stepovers):
         journey, middle = extracted_stepovers
@@ -117,13 +117,13 @@ class Action_train_to_destination(Action):
             
         startstadt = tracker.get_slot('startstadt')
         start = "Passau" if startstadt is None else startstadt
-        a = build_journey_url("Passau", tracker.get_slot('stadtname'))
+        a = build_journey_url(startstadt, tracker.get_slot('stadtname'))
         print(a)
         b = self.extract_stopovers(a)
         c = self.formulate_answer(b)
         dispatcher.utter_message(c)
         
-        return [SlotSet('startstadt', None)]
+        return []
            
            
            
