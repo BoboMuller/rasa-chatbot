@@ -59,7 +59,7 @@ responses:
     utter_function:
         - text: |
             Ich besitze die folgenden Funktionen:
-             - Du kannst mich Fragen wie du zu deinem Ziel kommst
+             - Du kannst mich Fragen wie du zu deinem Ziel kommst, wenn du mir auch sagst von wo aus du startest
              - Ich kann dir sagen, ob Personal in deiner nähe ist.
              - Ich kann dir beantworten, wie viel dich ein Ticket kosten würde.
              - Ich kann dir favouriten speichern.
