@@ -63,10 +63,10 @@ nlu:
 
 - intent: fav_route
   examples: |
-        - Ich möchte das Ziel zu meinen favouriten hinzufügen
-        - füge [München](stadtname) als favourite hinzu
-        - Zu favouriten hinzufügen
-        - bitte füg [Münster](stadtname) zu meinen favouriten
+        - Ich möchte das Ziel zu meinen favoriten hinzufügen
+        - füge [München](stadtname) als favorite hinzu
+        - Zu favoriten hinzufügen
+        - bitte füg [Münster](stadtname) zu meinen favoriten
 
 - intent: price
   examples: |
@@ -88,3 +88,9 @@ nlu:
         - Was kannst du alles
         - Wie kannst du mir helfen
         - Kannst du mir helfen
+        
+- intent: thank
+  examples: |
+        - Danke
+        - Vielen Dank
+        - Dankeschöm

@@ -21,7 +21,7 @@ stories:
    - intent: greet
    - action: utter_greet
    - intent: ask_arrival_time
-   - action: utter_expected_arrival
+   - action: action_train_arrival_time
 
  - story: add to favourites
    steps:
@@ -43,3 +43,8 @@ stories:
    - action: utter_greet
    - intent: ask_function
    - action: utter_function
+   
+ - story: Thanking
+   steps: 
+   - intent: thank
+   - action: utter_thanks_response
