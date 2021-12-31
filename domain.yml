@@ -37,14 +37,6 @@ responses:
        - text: |
            Was darf es denn sein?
 
-#    utter_train_to_destination:
-#        - text: |
-#            Klar, ich bringe dich gerne nach {stadtname}
-#        - text: |
-#            Sehr gern leite ich dich nach {stadtname}
-#        - text: |
-#            Hier ist die nächste gelegenheit um nach {stadtname} zu gelangen.
-
     utter_staff_availability:
         - text: |
             An diesem Bahnhof gibt es leider kein Personal. Tickets müssen am Schalter erworben werden.
@@ -62,10 +54,6 @@ responses:
             Du solltest in {ankunftszeit} ankommen.
         - text: |
             Du benötigst noch {ankunftszeit} bis zum Ziel.
-
-#    utter_price_range_to_deggendorf:
-#        - text: |
-#            Die Kosten für eine Fahrt variieren zwischen 15 und 17 Euro.
 
     utter_function:
         - text: |
@@ -88,16 +76,8 @@ slots:
     type: text
     mappings:
     - type: from_entity
-<<<<<<< Updated upstream
       entity: stadtname
-  wohnort:
-    type: text
-    mappings:
-    - type: from_entity
-      entity: wohnort
-=======
-      entity: stadtname   
->>>>>>> Stashed changes
+
   fav:
     type: text
     mappings:
