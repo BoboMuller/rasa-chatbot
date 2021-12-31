@@ -34,6 +34,10 @@ nlu:
         - Zurück nach [Mainkhofen](stadtname) bitte
         - Ich will nach [Frankfurt](stadtname)
 
+- intent: train_from_to_destination
+  examples: |
+        - Ich möchte von [Nürnberg](startstadt) nach [Passau](stadtname)
+
 - intent: ask_staff_available
   examples: |
         - Gibt es an dem Bahnhof Personal
