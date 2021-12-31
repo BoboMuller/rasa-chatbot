@@ -139,5 +139,5 @@ class Action_ask_arrival_time(Action):
             
         journey_url = build_journey_url("Passau", tracker.get_slot('stadtname'))
         arrival_time = self.extract_time(journey_url)
-        dispatcher.utter_message(f'Um {arrival_time} Uhr')
+        dispatcher.utter_message(f'Du bist um {arrival_time} Uhr da')
         return []

@@ -6,19 +6,20 @@ intents:
   - ask_staff_available
   - ask_arrival_time
   - fav_route
-#  - ask_price_range_deggendorf
+  - thank
   - price
   - ask_function
 
 actions:
   - utter_expected_arrival
   - utter_greet
-#  - utter_price_range_to_deggendorf
+  - utter_thanks_response
   - action_price
   - utter_staff_availability
   - utter_function
   - action_fav_route
   - action_train_to_destination
+  - action_train_arrival_time
 
 responses:
     utter_greet:
