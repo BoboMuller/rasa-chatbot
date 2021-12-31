@@ -116,7 +116,7 @@ class Action_train_to_destination(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
             
         startstadt = tracker.get_slot('startstadt')
-        start = "Passau" if startstadt is None else startstadt
+        startstadt = "Passau" if startstadt is None else startstadt
         a = build_journey_url(startstadt, tracker.get_slot('stadtname'))
         print(a)
         b = self.extract_stopovers(a)

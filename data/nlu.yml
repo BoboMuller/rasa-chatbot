@@ -30,6 +30,7 @@ nlu:
         - Wann fährt der Zug nach [Hannover](stadtname) von [Düsseldorf](startstadt)
         - Fährt ein Zug von [Augsburg](startstadt) nach [Mainz](stadtname)
         - Ich will nach [Frankfurt](stadtname) von [Regensburg](startstadt)
+        - Ich will nach [Münster](stadtname) von [Berlin](startstadt)
 
 - intent: ask_staff_available
   examples: |
