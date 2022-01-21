@@ -9,10 +9,12 @@ intents:
   - thank
   - price
   - ask_function
+  - buy_ticket
 
 actions:
   - utter_expected_arrival
   - utter_greet
+  - utter_buy_ticket
   - utter_thanks_response
   - action_price
   - utter_staff_availability
@@ -70,6 +72,10 @@ responses:
             Bitteschöm
         - text: |
             Wir helfen jederzeit gerne
+
+    utter_buy_ticket:
+        - text: |
+            Sehr gerne wird dir das Ticket gekauft.
 
 entities:
  - stadtname

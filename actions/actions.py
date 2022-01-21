@@ -59,7 +59,9 @@ class Action_price(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        strt="Passau"
+            
+        strt = tracker.get_slot('startstadt')
+        strt = "Passau" if strt is None else strt
         dstn = tracker.get_slot('stadtname')
         a = build_journey_url(strt, dstn)
         a = url_to_json(a)
