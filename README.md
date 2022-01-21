@@ -13,7 +13,9 @@ Then you go into the directory you cloned/downloaded and type: rasa shell
 In another directory you go into the same virtual environment, go to the downloaded/cloned folder and type: rasa run actions
 
 
+
 Edit: 21.1.2022
+
 The new versions of some dependancies cause trouble and I don't have time to find out what versions have to be used.
 I will fix this after the exams mid February.
 
